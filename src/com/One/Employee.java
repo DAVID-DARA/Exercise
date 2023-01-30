@@ -15,7 +15,7 @@ public class Employee {
 
     void addSal()
     {
-        if (this.salary < 500.3)
+        if (this.salary < 500)
         {
             this.salary = salary + 10;
             System.out.println("Salary_Base_Type: "+ this.salary);
