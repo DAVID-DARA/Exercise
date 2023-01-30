@@ -28,16 +28,18 @@ public class Matrix {
         elements[i][j] = value;
     }
 
-    public void addMatrix() {
-        int x;
-        int[][] result;
-        if ((numberRows < numberColumns) || (numberColumns < numberRows)) {
+    public Matrix add(Matrix other) {
+        if (numberRows != other.numberRows || numberColumns != other.numberColumns) {
             System.out.println("Matrices cannot be added");
+            return null;
         }
-        for (int i = 0; i<= this.numberRows; i++)
-            for (int j = 0; j<=this.numberColumns; j++)
-            {
-
+        Matrix result = new Matrix(numberRows, numberColumns);
+        for (int i = 0; i < numberRows; i++) {
+            for (int j = 0; j < numberColumns; j++) {
+                result.elements[i][j] = elements[i][j] + other.elements[i][j];
             }
+        }
+        return result;
     }
+
 }
